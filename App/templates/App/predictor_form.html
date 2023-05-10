@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <title>Loan Prediction</title>
+</head>
+<body>
+  <form class="form-horizontal" action = "/predict/">
+    {% csrf_token %}
+  <section class="text-gray-400 bg-gray-900 body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-12">
+        <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-white">Now, it's your predictor</h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Now, Use the Predictor! .</p>
+      </div>
+      <div class="flex lg:w-2/3 w-full sm:flex-row flex-col mx-auto px-8 sm:px-0 items-end sm:space-x-4 sm:space-y-0 space-y-4">
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Gender" class="leading-7 text-sm text-gray-400">Gender</label>
+          <input type="text" id="Gender" name="Gender" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative sm:mb-0 flex-grow w-full">
+          <label for="Married" class="leading-7 text-sm text-gray-400">Married</label>
+          <input type="text" id="Married" name="Married" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+        </div>
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="Education" class="leading-7 text-sm text-gray-400">Education</label>
+        <input type="text" id="Education" name="Education" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div> 
+      <br> 
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="Self_Employed" class="leading-7 text-sm text-gray-400">Self_Employed</label>
+        <input type="text" id="Self_Employed" name="Self_Employed" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>  
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="ApplicantIncome" class="leading-7 text-sm text-gray-400">ApplicantIncome</label>
+        <input type="text" id="ApplicantIncome" name="ApplicantIncome" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>  
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="CoapplicantIncome" class="leading-7 text-sm text-gray-400">CoapplicantIncome</label>
+        <input type="text" id="CoapplicantIncome" name="CoapplicantIncome" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>  
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="LoanAmount" class="leading-7 text-sm text-gray-400">LoanAmount</label>
+        <input type="text" id="LoanAmount" name="LoanAmount" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div> 
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="Loan_Amount_Term" class="leading-7 text-sm text-gray-400">Loan_Amount_Term</label>
+        <input type="text" id="Loan_Amount_Term" name="Loan_Amount_Term" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div> 
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="Credit_History" class="leading-7 text-sm text-gray-400">Credit_History</label>
+        <input type="text" id="Credit_History" name="Credit_History" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div> 
+      <div class="relative sm:mb-0 flex-grow w-full">
+        <label for="Property_Area" class="leading-7 text-sm text-gray-400">Property_Area</label>
+        <input type="text" id="Property_Area" name="Property_Area" class="w-full bg-gray-800 bg-opacity-40 rounded border border-gray-700 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-900 focus:bg-transparent text-base outline-none text-gray-100 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div> 
+      <div> 
+      <button type="submit" class="text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">Predict</button> 
+      </div> 
+  </section>     
+</form>      
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
